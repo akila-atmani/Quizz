@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('../image/ballon.jpeg');
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+       
+     background-image: url('../image/ballon.jpeg'); 
+     background-size: cover; 
+     background-position: center; 
+     background-repeat: no-repeat;
+     position: relative;
+     overflow: auto;
+
+    
+}
+
+
+
+header {
+    background-color: #1e3a8a; 
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    color: #047e68; 
+    margin-bottom: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    position: relative;
+    display: inline-block;
+}
+
+h1::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #364c84; 
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s ease-in-out;
+}
+
+h1:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+h1:hover {
+    color: #120e60; 
+}
+
+
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+
+form div p {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #374151; 
+}
+
+
+label {
+    display: block;
+    background-color: #34d399; 
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+label:hover {
+    background-color: #10b981; 
+}
+
+
+button {
+    background-color: #2563eb; 
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1e40af; 
+}
+
+
+form div {
+    margin-bottom: 20px;
+}
+
+
+
+footer {
+    background-color: #98c5fa;
+    color: white;
+    text-align: center;
+    padding: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

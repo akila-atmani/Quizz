@@ -1,0 +1,143 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f1eb; 
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    flex-direction: column;
+    min-height: 100vh;
+    color: #4b4a40;
+    
+   
+    
+    background-image: url('../image/histoire.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    overflow: auto; 
+}
+
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1); 
+    z-index: -1; }
+
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    color: #e9c9ab; 
+    margin-bottom: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    position: relative;
+    display: inline-block;
+    padding-left  : 40px;
+}
+
+h1::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #a8a679; 
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s ease-in-out;
+}
+
+h1:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+h1:hover {
+    color: #6d5a47; 
+}
+
+
+form {
+    background-color: #e7c273;
+    border-radius: 10px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px; 
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+div p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #3e3d32; 
+}
+
+
+label {
+    display: block;
+    padding: 1rem;
+    background: #9e8757; 
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+label:hover {
+    background: #d1c3a1; 
+    color: #5a4b3d; 
+    transform: translateX(5px);
+}
+
+
+button {
+    background-color: #6d5a47; 
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 1rem;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #5a4b3d;
+    transform: translateY(-5px);
+}
+
+button:active {
+    background-color: #4a3e31; 
+}
+
+
+footer {
+    background-color: #f6f9c0;
+    color: rgb(26, 16, 3);
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
