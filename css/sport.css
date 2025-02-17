@@ -1,48 +1,53 @@
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-image: url('../image/ballon.jpeg');
-    
+    box-sizing: border-box;
+}
+
+/* Corps de la page */
+body {
+    background-color: #f4f1eb; /* Fond clair */
+    font-family: 'Arial', sans-serif;
     display: flex;
+    justify-content: center;
+    align-items: flex-start; 
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-
-       
-     background-image: url('../image/ballon.jpeg'); 
-     background-size: cover; 
-     background-position: center; 
-     background-repeat: no-repeat;
-     position: relative;
-     overflow: auto;
-
-    
+    min-height: 100vh;
+    color: #4b4a40; /* Couleur sombre pour le texte */
+    background-image: url('../image/sport.jpeg');  /* Image de fond */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    overflow: auto;
 }
 
-
-
-header {
-    background-color: #1e3a8a; 
-    color: white;
-    text-align: center;
-    padding: 20px;
+/* Effet d'ombrage sur l'arrière-plan */
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1); /* Légère superposition sombre */
+    z-index: -1;
 }
 
-
+/* Style du titre */
 h1 {
     font-size: 3rem;
     text-align: center;
-    color: #047e68; 
+    color: #ffffff;  /* Couleur blanche pour un contraste fort */
     margin-bottom: 2rem;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 6px;
     position: relative;
     display: inline-block;
+    padding-left: 40px;
 }
 
+/* Ligne sous le titre */
 h1::before {
     content: '';
     position: absolute;
@@ -50,7 +55,7 @@ h1::before {
     left: 0;
     width: 100%;
     height: 4px;
-    background: #364c84; 
+    background: #fbbf24;  /* Jaune vif pour rappeler l'énergie du sport */
     transform: scaleX(0);
     transform-origin: bottom right;
     transition: transform 0.4s ease-in-out;
@@ -62,75 +67,133 @@ h1:hover::before {
 }
 
 h1:hover {
-    color: #120e60; 
+    color: #10b981;  /* Vert sportif pour l'effet au survol */
 }
 
-
+/* Style du formulaire */
 form {
-    background-color: white;
-    padding: 20px;
+    background-color: #1e40af;  /* Bleu sportif */
     border-radius: 10px;
+    padding: 2rem;
     width: 100%;
-    max-width: 600px; 
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+    max-width: 600px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style des paragraphes dans le formulaire */
+div p {
     font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #ffffff;  /* Couleur blanche pour les questions */
 }
 
-
-form div p {
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #374151; 
-}
-
-
+/* Style des labels */
 label {
     display: block;
-    background-color: #34d399; 
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    margin: 5px 0;
+    padding: 1rem;
+    background: #34d399;  /* Vert clair dynamique pour les labels */
+    border-radius: 8px;
+    margin-bottom: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background 0.3s, transform 0.3s;
 }
 
+/* Effet de survol des labels */
 label:hover {
-    background-color: #10b981; 
+    background: #059669;  /* Vert foncé au survol */
+    color: #ffffff;
+    transform: translateX(5px);
 }
 
-
+/* Style du bouton */
 button {
-    background-color: #2563eb; 
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
+    background-color: #fbbf24;  /* Jaune sportif pour attirer l'attention */
+    color: #ffffff;
     font-size: 1.2rem;
-    cursor: pointer;
-    margin-top: 20px;
+    padding: 1rem;
     width: 100%;
-    transition: background-color 0.3s ease;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
+/* Effet de survol du bouton */
 button:hover {
-    background-color: #1e40af; 
+    background-color: #d97706;  /* Jaune plus foncé pour le bouton au survol */
+    transform: translateY(-5px);
 }
 
-
-form div {
-    margin-bottom: 20px;
+/* Effet lorsque le bouton est cliqué */
+button:active {
+    background-color: #b45309;  /* Couleur encore plus foncée lorsque le bouton est pressé */
 }
 
-
-
+/* Style du footer */
 footer {
-    background-color: #98c5fa;
-    color: white;
+    background-color: #93b5fd;  /* Bleu profond pour le footer */
+    color: #ffffff; /* Couleur claire pour le texte */
     text-align: center;
-    padding: 0;
+    padding: 10px 0;
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+/* Style de la barre de navigation */
+nav {
+    background-color: #93b5fd; /* Bleu vif */
+    width: 100%;
+    position: sticky; /* Fixe la barre en haut de la page lors du défilement */
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre sous la barre pour plus de profondeur */
+    display: flex;
+    justify-content: center; /* Centre les éléments horizontalement */
+    padding: 10px 0; /* Ajoute un peu de padding pour l'espacement vertical */
+    transition: background-color 0.3s ease; /* Transition douce pour le changement de couleur de fond */
+}
+
+/* Liens de la barre de navigation */
+nav a {
+    color: white;
+    text-align: center;
+    padding: 16px 20px; /* Plus de padding pour améliorer la lisibilité */
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease; /* Transition pour les effets de hover */
+    display: inline-block; /* Permet une meilleure gestion des espaces */
+}
+
+/* Effet au survol des liens de la barre de navigation */
+nav a:hover {
+    background-color: #1e40af; /* Bleu plus foncé pour un effet dynamique */
+    color: #ffffff; /* Garder la couleur blanche lors du survol */
+    transform: translateY(-2px); 
+    border-radius: 22px;
+}
+
+/* Style du lien actif */
+nav a.active {
+    background-color: #fbbf24; /* Jaune vif pour le lien actif */
+    color: #ffffff;
+    font-weight: bold; /* Mettre le lien actif en gras pour le distinguer */
+}
+
+/* Ajout d'une barre de navigation mobile (si nécessaire) */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Passe la barre de navigation en colonne sur les petits écrans */
+        align-items: center;
+    }
+
+    nav a {
+        padding: 14px 20px; /* Réduit le padding sur mobile pour optimiser l'espace */
+        width: 100%; /* Fait en sorte que les liens prennent toute la largeur sur mobile */
+        text-align: center; /* Centre les textes dans les liens */
+    }
 }

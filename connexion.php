@@ -105,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
 
     <footer>
-        <p>&copy; 2025 Restaurant du Monde. Tous droits réservés.</p>
+        <p>&copy; 2025 Quiz & Découverte. Tous droits réservés.</p>
     </footer>
 </body>
 </html>

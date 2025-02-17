@@ -1,28 +1,35 @@
 <?php
+// Inclure le fichier Database.php pour accéder à la classe Database
 include('Database.php');
 
+// Créer une instance de la classe Database
 $db = new Database();
 $conn = $db->connect();  // Se connecter à la base de données
 
+// Vérifier si le formulaire a été soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Récupérer les réponses de l'utilisateur
     $reponse1 = isset($_POST['reponse1']) ? (int)$_POST['reponse1'] : 0;
     $reponse2 = isset($_POST['reponse2']) ? (int)$_POST['reponse2'] : 0;
     $reponse3 = isset($_POST['reponse3']) ? (int)$_POST['reponse3'] : 0;
 
     try {
-       
+        // Si tu veux mettre à jour la colonne 'reponse' pour un utilisateur spécifique (par exemple id-user = 1)
+        // Mise à jour pour la question 1
         $stmt = $conn->prepare("UPDATE questions SET reponse = :reponse1 WHERE `id-user` = 1 AND question = 'Les Misérables'");
         $stmt->bindParam(':reponse1', $reponse1, PDO::PARAM_INT);
         if ($stmt->execute()) {
             echo "Réponse pour la question 1 envoyée avec succès !<br>";
         }
 
+        // Mise à jour pour la question 2
         $stmt = $conn->prepare("UPDATE questions SET reponse = :reponse2 WHERE `id-user` = 1 AND question = 'La première guerre mondiale a commencé en 1914'");
         $stmt->bindParam(':reponse2', $reponse2, PDO::PARAM_INT);
         if ($stmt->execute()) {
             echo "Réponse pour la question 2 envoyée avec succès !<br>";
         }
 
+        // Mise à jour pour la question 3
         $stmt = $conn->prepare("UPDATE questions SET reponse = :reponse3 WHERE `id-user` = 1 AND question = 'Albert Einstein a inventé la théorie de la relativité'");
         $stmt->bindParam(':reponse3', $reponse3, PDO::PARAM_INT);
         if ($stmt->execute()) {
@@ -33,6 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
+// Fermer la connexion après utilisation
 $db->disconnect();
 ?>
 
@@ -48,7 +56,13 @@ $db->disconnect();
     <link rel="stylesheet" href="css/culture.css">
 </head>
 <body>
-    <h1>Quiz Culture Générale</h1>
+    <header> <h1>Quiz Culture Générale</h1>
+</header>
+<nav>
+        <a href="index.php">Accueil</a>
+        <a href="connexion.php">Déconnexion</a>
+    </nav>
+   
 
     <form action="culture.php" method="post">
         <div>
